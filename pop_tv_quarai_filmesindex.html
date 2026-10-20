@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090909">
+<meta name="description" content="Pop TV Quaraí Filmes — curtas-metragens, suspense, policial, drama e cinema independente de Quaraí, RS.">
+<title>Pop TV Quaraí Filmes | Cinema Online</title>
+<style>
+:root{--red:#e50914;--bg:#080808;--panel:#171717;--muted:#aaa;--white:#f5f5f5}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--white);font-family:Arial,Helvetica,sans-serif}
+button,input,select{font:inherit}button,a{cursor:pointer}a{color:inherit;text-decoration:none}
+header{height:70px;display:flex;align-items:center;gap:28px;padding:0 5%;position:sticky;top:0;z-index:20;background:linear-gradient(#080808 65%,rgba(8,8,8,.93));backdrop-filter:blur(10px)}
+.logo{font-weight:900;color:var(--red);font-size:clamp(18px,2.2vw,27px);letter-spacing:-1px;white-space:nowrap}.logo span{display:block;color:#eee;font-size:9px;letter-spacing:3px;margin-top:2px}
+nav{display:flex;gap:18px;font-size:13px;color:#ddd}nav a:hover{color:#fff}
+.header-right{margin-left:auto;display:flex;gap:10px;align-items:center}.search{width:min(220px,28vw);background:#111;border:1px solid #444;color:white;padding:10px 12px;border-radius:4px}
+.btn{border:0;border-radius:4px;padding:11px 16px;font-weight:bold;display:inline-flex;align-items:center;justify-content:center;gap:8px}.btn-red{background:var(--red);color:#fff}.btn-light{background:#eee;color:#111}.btn-dark{background:#333;color:#fff}.btn:hover{filter:brightness(1.15)}
+.hero{min-height:540px;display:flex;align-items:end;padding:70px 5% 62px;position:relative;overflow:hidden;background:linear-gradient(90deg,#080808 0%,rgba(8,8,8,.9) 35%,rgba(8,8,8,.3) 75%),linear-gradient(0deg,#080808 0%,transparent 70%),url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1800&q=85') center/cover}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#080808 0%,transparent 28%);pointer-events:none}
+.hero-content{max-width:660px;position:relative;z-index:1}.eyebrow{color:#ff4148;font-weight:bold;letter-spacing:3px;font-size:12px}.hero h1{font-size:clamp(36px,6vw,70px);line-height:.98;margin:14px 0;text-transform:uppercase;letter-spacing:-2px}.hero p{font-size:16px;line-height:1.65;color:#ddd;max-width:570px}.meta{display:flex;gap:12px;align-items:center;color:#ddd;font-size:13px;flex-wrap:wrap;margin:15px 0}.pill{border:1px solid #777;border-radius:3px;padding:3px 7px;font-size:11px}
+main{padding:0 5% 50px}.notice{margin:20px 0 26px;background:#161616;border-left:3px solid var(--red);padding:14px 17px;color:#ccc;font-size:13px;line-height:1.5}
+.section{margin:28px 0 34px}.section-head{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:14px}.section h2{font-size:21px;margin:0}.section-sub{font-size:12px;color:var(--muted);margin-top:5px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.filter{background:#1b1b1b;border:1px solid #383838;color:#ddd;border-radius:20px;padding:8px 13px;font-size:12px}.filter.active,.filter:hover{background:var(--red);border-color:var(--red);color:white}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:17px}.card{background:#141414;border-radius:5px;overflow:hidden;transition:transform .2s,box-shadow .2s;min-width:0}.card:hover{transform:scale(1.025);box-shadow:0 10px 30px #000}.poster{height:auto;aspect-ratio:16/9;background:linear-gradient(135deg,#333,#111);position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}.poster img{width:100%;height:100%;object-fit:cover;display:block}.poster .poster-title{position:absolute;inset:0;display:flex;align-items:end;padding:14px;background:linear-gradient(0deg,rgba(0,0,0,.9),transparent 70%);font-size:19px;font-weight:900;text-transform:uppercase;text-shadow:0 2px 6px #000}.play-circle{position:absolute;top:12px;right:12px;width:38px;height:38px;background:var(--red);border-radius:50%;display:grid;place-items:center;font-size:16px;box-shadow:0 2px 12px #0008}
+.card-body{padding:12px}.card h3{margin:0 0 7px;font-size:15px}.card p{color:#aaa;font-size:12px;line-height:1.45;margin:0 0 11px}.card-actions{display:flex;gap:7px;flex-wrap:wrap}.card-actions .btn{font-size:11px;padding:8px 10px}
+.empty{display:none;padding:30px;text-align:center;color:#aaa;background:#151515;border-radius:5px}
+.feature-row{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;background:#141414;border-radius:6px;overflow:hidden}.feature-image{min-height:250px;background:linear-gradient(135deg,#451014,#111);display:flex;align-items:center;justify-content:center;text-align:center;padding:30px;font-size:32px;font-weight:900}.feature-copy{padding:28px 25px}.feature-copy h2{font-size:28px}.feature-copy p{color:#bbb;line-height:1.6;font-size:14px}
+.about{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.about article{background:#151515;padding:22px;border-radius:5px}.about .icon{font-size:26px}.about h3{margin:10px 0 6px}.about p{font-size:13px;line-height:1.55;color:#aaa;margin:0}
+footer{border-top:1px solid #292929;padding:30px 5%;color:#888;font-size:12px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}footer strong{color:#ddd}
+.modal{display:none;position:fixed;inset:0;z-index:50;background:#000e;align-items:center;justify-content:center;padding:20px}.modal.open{display:flex}.modal-box{background:#141414;border:1px solid #333;width:min(900px,100%);border-radius:8px;overflow:hidden;position:relative}.modal-head{padding:14px 18px;display:flex;align-items:center;justify-content:space-between}.modal-head h2{font-size:18px;margin:0}.close{border:0;background:#333;color:#fff;border-radius:4px;padding:8px 12px}.video-wrap{aspect-ratio:16/9;background:#000}.video-wrap iframe{width:100%;height:100%;border:0}.modal-info{padding:16px 18px;color:#bbb;font-size:13px;line-height:1.5}
+.admin{background:#141414;border:1px solid #333;border-radius:6px;padding:20px}.admin p{font-size:13px;line-height:1.6;color:#bbb}.admin-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.admin label{display:block;font-size:12px;color:#ccc;margin-bottom:5px}.admin input,.admin select{width:100%;padding:10px;background:#090909;color:#fff;border:1px solid #444;border-radius:4px}.admin .wide{grid-column:1/-1}.admin small{color:#999}.status{font-size:12px;color:#8f8;padding-top:10px}
+@media(max-width:900px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}nav{gap:10px}.hero{min-height:470px}}
+@media(max-width:650px){header{height:auto;min-height:64px;padding:12px 4%;flex-wrap:wrap;gap:10px}.logo{font-size:18px}nav{order:3;width:100%;overflow:auto;padding-bottom:3px}.header-right{margin-left:auto}.search{width:130px}.header-right .btn{display:none}.hero{padding:60px 4% 48px;min-height:470px}.hero p{font-size:14px}main{padding:0 4% 35px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.card h3{font-size:13px}.card-body{padding:9px}.card-actions .btn{padding:7px;font-size:10px}.feature-row{grid-template-columns:1fr}.feature-image{min-height:170px}.about{grid-template-columns:1fr}.section h2{font-size:18px}.admin-grid{grid-template-columns:1fr}.admin .wide{grid-column:auto}}
+</style>
+</head>
+<body>
+<header>
+<a class="logo" href="#inicio">POP TV QUARAÍ<span>FILMES • CINEMA ONLINE</span></a>
+<nav><a href="#inicio">Início</a><a href="#catalogo">Filmes</a><a href="#series">Séries</a><a href="#canal-youtube">YouTube</a><a href="#sobre">Sobre</a></nav>
+<div class="header-right"><input id="search" class="search" type="search" placeholder="Buscar filme..." aria-label="Buscar filme"><a class="btn btn-red" href="https://www.youtube.com/channel/UC__VrRCxnHEa6AkXxJBNfXg/videos" target="_blank" rel="noopener">Canal YouTube</a></div>
+</header>
+<section class="hero" id="inicio">
+<div class="hero-content">
+<div class="eyebrow">CINEMA INDEPENDENTE • QUARAÍ, RS</div>
+<h1>Histórias que<br>prendem você.</h1>
+<div class="meta"><span>POP TV ORIGINAL</span><span class="pill">CURTAS-METRAGENS</span><span>Suspense • Policial • Drama</span></div>
+<p>Bem-vindo à Pop TV Quaraí Filmes. Um lugar para descobrir histórias, acompanhar capítulos e valorizar o cinema independente feito na nossa região.</p>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:20px"><a class="btn btn-red" href="#catalogo">▶ &nbsp; VER CATÁLOGO</a><a class="btn btn-light" href="#sobre">ⓘ &nbsp; SOBRE A POP TV</a></div>
+</div>
+</section>
+<main>
+<div class="notice"><strong>Bem-vindo ao nosso cinema online!</strong> Este site reúne os filmes da Pop TV Quaraí Filmes. Para assistir, cada produção precisa ter seu link do YouTube ou vídeo incorporado. Use a área “Adicionar filme” abaixo para cadastrar títulos neste navegador; para publicar as alterações para todos os visitantes, será necessário editar o arquivo do site e republicá-lo.</div>
+<section class="section" id="catalogo">
+<div class="section-head"><div><h2>Todos os filmes</h2><div class="section-sub">Explore as produções da Pop TV Quaraí Filmes</div></div><span id="count" class="pill">0 FILMES</span></div>
+<div class="filters" id="filters"><button class="filter active" data-filter="Todos">Todos</button><button class="filter" data-filter="Suspense">Suspense</button><button class="filter" data-filter="Policial">Policial</button><button class="filter" data-filter="Drama">Drama</button><button class="filter" data-filter="Ficção científica">Ficção científica</button><button class="filter" data-filter="Histórico">Histórico</button></div>
+<div class="grid" id="movieGrid"></div><div class="empty" id="empty">Nenhum filme encontrado. Tente outra busca ou categoria.</div>
+</section>
+<section class="section" id="series">
+<div class="section-head"><div><h2>Séries e capítulos</h2><div class="section-sub">Acompanhe as histórias em sequência</div></div></div>
+<div class="feature-row"><div class="feature-image">CASO 59<br><span style="font-size:12px;letter-spacing:4px;display:block">SÉRIE POLICIAL</span></div><div class="feature-copy"><div class="eyebrow">EM DESTAQUE</div><h2>Histórias em capítulos</h2><p>Use esta área para destacar séries, temporadas e episódios. Adicione o link de cada capítulo no catálogo para que o público possa assistir na ordem certa.</p><a href="#catalogo" class="btn btn-red">VER CAPÍTULOS</a></div></div>
+</section>
+<section class="section" id="canal-youtube">
+<div class="section-head"><div><h2>Vídeos do canal oficial</h2><div class="section-sub">Acompanhe os lançamentos publicados no YouTube da Pop TV Quaraí Filmes</div></div><a class="btn btn-red" href="https://www.youtube.com/channel/UC__VrRCxnHEa6AkXxJBNfXg/videos" target="_blank" rel="noopener">▶ Ver todos no YouTube</a></div>
+<div class="video-wrap" style="border-radius:6px;overflow:hidden;aspect-ratio:16/9;max-width:100%;"><iframe src="https://www.youtube.com/embed/videoseries?list=UU__VrRCxnHEa6AkXxJBNfXg" title="Vídeos do canal Pop TV Quaraí Filmes" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+<p style="color:#aaa;font-size:12px;line-height:1.5">Se a lista de vídeos não aparecer incorporada, use o botão acima para abrir o canal oficial no YouTube.</p>
+</section>
+<section class="section" id="sobre"><div class="section-head"><div><h2>Mais que filmes. Histórias da nossa terra.</h2><div class="section-sub">Pop TV Quaraí Filmes — cinema independente com identidade local.</div></div></div>
+<div class="about"><article><div class="icon">🎬</div><h3>Produção local</h3><p>Valorizamos o talento, os artistas e as histórias criadas em Quaraí e região.</p></article><article><div class="icon">🍿</div><h3>Assista onde quiser</h3><p>O site se adapta a celular, computador e tablet. Os vídeos podem ser exibidos pelo YouTube.</p></article><article><div class="icon">❤️</div><h3>Apoie o cinema</h3><p>Compartilhe os filmes, inscreva-se no canal e ajude a levar as produções locais a mais pessoas.</p></article></div>
+</section>
+<section class="section" id="adicionar"><div class="section-head"><div><h2>Adicionar filme</h2><div class="section-sub">Cadastro local de títulos para organizar o catálogo</div></div></div>
+<div class="admin"><p>Preencha os dados e clique em <strong>Adicionar ao catálogo</strong>. Os filmes cadastrados por aqui ficam salvos somente neste navegador. Para que todos os visitantes vejam o cadastro, inclua os dados no arquivo do site e publique novamente.</p>
+<form id="movieForm" class="admin-grid">
+<div><label for="title">Título do filme *</label><input id="title" required placeholder="Ex.: O Cofre"></div>
+<div><label for="genre">Categoria</label><select id="genre"><option>Suspense</option><option>Policial</option><option>Drama</option><option>Ficção científica</option><option>Histórico</option><option>Comédia</option><option>Outro</option></select></div>
+<div class="wide"><label for="description">Sinopse curta</label><input id="description" placeholder="Uma frase sobre o filme"></div>
+<div class="wide"><label for="youtube">Link do YouTube</label><input id="youtube" type="url" placeholder="https://www.youtube.com/watch?v=..."></div>
+<div class="wide"><label for="poster">Link da capa (opcional)</label><input id="poster" type="url" placeholder="https://.../capa.jpg"></div>
+<div class="wide"><button class="btn btn-red" type="submit">＋ ADICIONAR AO CATÁLOGO</button> <button class="btn btn-dark" type="button" id="exportBtn">Exportar catálogo JSON</button></div>
+</form><div id="status" class="status" aria-live="polite"></div><p><small>Dica: use links de vídeos que você tem autorização para publicar. O site não hospeda os vídeos; o player utiliza o YouTube.</small></p></div>
+</section>
+</main>
+<footer><div><strong>POP TV QUARAÍ FILMES</strong><br>Cinema independente • Quaraí, Rio Grande do Sul</div><div>© <span id="year"></span> Pop TV Quaraí Filmes<br>Feito para celebrar nossas histórias.</div></footer>
+<div class="modal" id="playerModal" role="dialog" aria-modal="true" aria-label="Assistir filme"><div class="modal-box"><div class="modal-head"><h2 id="modalTitle">Assistir</h2><button class="close" id="closeModal">✕ Fechar</button></div><div class="video-wrap" id="videoWrap"></div><div class="modal-info" id="modalInfo"></div></div></div>
+<script>
+const initialMovies = [
+ {id:'cofre',title:'O Cofre',genre:'Suspense',description:'Um suspense criminal da Pop TV Quaraí Filmes.',youtube:'',poster:'',year:'Curta-metragem'},
+ {id:'caso59',title:'Caso 59',genre:'Policial',description:'Série policial em capítulos. Adicione os links de cada episódio.',youtube:'',poster:'',year:'Série'},
+ {id:'trespassos',title:'Três Passos da Liberdade',genre:'Drama',description:'Uma história sobre liberdade, escolhas e recomeços.',youtube:'',poster:'',year:'Curta-metragem'},
+ {id:'parteira',title:'A Parteira do Saladeiro',genre:'Histórico',description:'Uma história de época ambientada no universo gaúcho.',youtube:'',poster:'',year:'Curta-metragem'},
+ {id:'luzlua',title:'Luz da Lua',genre:'Ficção científica',description:'Mistério, luzes inexplicáveis e uma visita inesperada.',youtube:'',poster:'',year:'Curta-metragem'},
+ {id:'omestre',title:'O Mestre',genre:'Policial',description:'Um suspense policial sobre uma investigação inquietante.',youtube:'',poster:'',year:'Curta-metragem'}
+];
+let movies = [...initialMovies];
+let activeFilter = 'Todos';
+const grid=document.getElementById('movieGrid'), search=document.getElementById('search');
+function youtubeId(url){try{const u=new URL(url);if(u.hostname.includes('youtu.be'))return u.pathname.slice(1);if(u.searchParams.get('v'))return u.searchParams.get('v');if(u.pathname.includes('/embed/'))return u.pathname.split('/embed/')[1].split('/')[0];if(u.pathname.includes('/shorts/'))return u.pathname.split('/shorts/')[1].split('/')[0]}catch(e){}return ''}
+function safe(s){return String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function render(){const q=search.value.trim().toLowerCase();const filtered=movies.filter(m=>(activeFilter==='Todos'||m.genre===activeFilter)&&(m.title+' '+m.genre+' '+m.description).toLowerCase().includes(q));grid.innerHTML=filtered.map(m=>{const yt=youtubeId(m.youtube);const img=m.poster||(yt?'https://img.youtube.com/vi/'+yt+'/hqdefault.jpg':'');return `<article class="card"><div class="poster">${img?`<img loading="lazy" src="${safe(img)}" alt="Capa de ${safe(m.title)}" onerror="this.style.display='none'">`:''}<div class="poster-title">${safe(m.title)}</div><span class="play-circle">▶</span></div><div class="card-body"><h3>${safe(m.title)}</h3><p>${safe(m.genre)} · ${safe(m.year||'Pop TV Original')}<br>${safe(m.description||'Produção Pop TV Quaraí Filmes.')}</p><div class="card-actions"><button class="btn btn-red" onclick="watch('${safe(m.id)}')">▶ Assistir</button><button class="btn btn-dark" onclick="details('${safe(m.id)}')">Detalhes</button></div></div></article>`}).join('');document.getElementById('count').textContent=filtered.length+' '+(filtered.length===1?'FILME':'FILMES');document.getElementById('empty').style.display=filtered.length?'none':'block'}
+window.watch=function(id){const m=movies.find(x=>x.id===id);if(!m)return;const vid=youtubeId(m.youtube);document.getElementById('modalTitle').textContent=m.title;document.getElementById('modalInfo').textContent=m.description||'Pop TV Quaraí Filmes';document.getElementById('videoWrap').innerHTML=vid?`<iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(vid)}?autoplay=1" title="${safe(m.title)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`:`<div style="height:100%;display:grid;place-items:center;text-align:center;padding:25px;color:#ddd"><div><div style="font-size:44px">🎬</div><h3>Vídeo ainda não cadastrado</h3><p>Adicione o link do YouTube deste filme na área “Adicionar filme”.</p>${m.youtube?`<a class="btn btn-red" href="${safe(m.youtube)}" target="_blank" rel="noopener">Abrir vídeo</a>`:''}</div></div>`;document.getElementById('playerModal').classList.add('open')};
+window.details=function(id){const m=movies.find(x=>x.id===id);if(!m)return;document.getElementById('modalTitle').textContent=m.title+' — Detalhes';document.getElementById('modalInfo').textContent=(m.genre||'Filme')+' • '+(m.year||'Pop TV Original')+' — '+(m.description||'Produção Pop TV Quaraí Filmes.');document.getElementById('videoWrap').innerHTML=`<div style="height:100%;display:grid;place-items:center;text-align:center;padding:25px;color:#ddd"><div><div style="font-size:44px">🎞️</div><h3>${safe(m.title)}</h3><p>${safe(m.description||'Produção Pop TV Quaraí Filmes.')}</p><button class="btn btn-red" onclick="watch('${safe(m.id)}')">▶ Assistir agora</button></div></div>`;document.getElementById('playerModal').classList.add('open')};
+document.getElementById('closeModal').onclick=()=>{document.getElementById('playerModal').classList.remove('open');document.getElementById('videoWrap').innerHTML=''};
+document.getElementById('playerModal').addEventListener('click',e=>{if(e.target.id==='playerModal'){document.getElementById('playerModal').classList.remove('open');document.getElementById('videoWrap').innerHTML=''}});
+search.addEventListener('input',render);
+document.getElementById('filters').addEventListener('click',e=>{const b=e.target.closest('button[data-filter]');if(!b)return;activeFilter=b.dataset.filter;document.querySelectorAll('.filter').forEach(x=>x.classList.toggle('active',x===b));render()});
+document.getElementById('movieForm').addEventListener('submit',e=>{e.preventDefault();const title=document.getElementById('title').value.trim();const youtube=document.getElementById('youtube').value.trim();if(youtube&&!youtubeId(youtube)){document.getElementById('status').textContent='Confira o link do YouTube e tente novamente.';return}const movie={id:'user'+Date.now(),title,genre:document.getElementById('genre').value,description:document.getElementById('description').value.trim(),youtube,poster:document.getElementById('poster').value.trim(),year:'Pop TV Original'};movies.unshift(movie);try{localStorage.setItem('popTvMovies',JSON.stringify(movies))}catch(e){};render();e.target.reset();document.getElementById('status').textContent='Filme adicionado neste navegador. Para publicar para todos, exporte o catálogo e atualize o arquivo do site.';document.getElementById('catalogo').scrollIntoView({behavior:'smooth'})});
+document.getElementById('exportBtn').addEventListener('click',()=>{const blob=new Blob([JSON.stringify(movies,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='catalogo-pop-tv-quarai.json';a.click();URL.revokeObjectURL(a.href);document.getElementById('status').textContent='Arquivo JSON exportado.'});
+try{const saved=localStorage.getItem('popTvMovies');if(saved){const parsed=JSON.parse(saved);if(Array.isArray(parsed))movies=parsed}}catch(e){}
+document.getElementById('year').textContent=new Date().getFullYear();render();
+</script>
+</body></html>
